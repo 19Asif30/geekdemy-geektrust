@@ -58,7 +58,7 @@ fs.readFile(filename, "utf8", (err, data) => {
       coupons.push(item.split(" ")[1]);
     }
   }
-
+  sub_total += pro_membership_fee;
   lowest_valued =
     Object.values(purchases)[0][1] / Object.values(purchases)[0][0];
   for (let i in purchases) {
