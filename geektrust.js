@@ -90,7 +90,7 @@ fs.readFile(filename, "utf8", (err, data) => {
         total = sub_total - sub_total * 0.2;
         coupon_discount = sub_total * 0.2;
         coupon_chosen = "DEAL_G20";
-      } else if (program_count >= 2) {
+      } else {
         total = sub_total - sub_total * 0.05;
         coupon_discount = sub_total * 0.05;
         coupon_chosen = "DEAL_G5";
