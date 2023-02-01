@@ -55,7 +55,6 @@ fs.readFile(filename, "utf8", (err, data) => {
         }
       }
     } else if (item.includes("APPLY_COUPON")) {
-      hasCoupon = true;
       coupons.push(item.split(" ")[1]);
     }
   }
@@ -85,12 +84,12 @@ fs.readFile(filename, "utf8", (err, data) => {
         coupon_discount = sub_total * 0.05;
         coupon_chosen = "DEAL_G5";
       }
-    } else {
+    } else if (coupons.length > 1) {
       if (coupons.includes("DEAL_G20") && sub_total >= 10000) {
         total = sub_total - sub_total * 0.2;
         coupon_discount = sub_total * 0.2;
         coupon_chosen = "DEAL_G20";
-      } else {
+      } else if (program_count >= 2) {
         total = sub_total - sub_total * 0.05;
         coupon_discount = sub_total * 0.05;
         coupon_chosen = "DEAL_G5";
